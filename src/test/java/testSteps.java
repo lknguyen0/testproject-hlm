@@ -25,7 +25,10 @@ public class testSteps {
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11.0");
-        caps.setCapability(MobileCapabilityType.APP, "*//testproject-hlm/apps/myapp-original.apk");
+
+        //for the second test run, uninstall the app from the emulator and change app path to .../myapp-button_login_1.apk
+
+        caps.setCapability(MobileCapabilityType.APP, "https://github.com/lknguyen0/testproject-hlm/raw/master/apps/myapp-original.apk");
         caps.setCapability("autoLaunch", false);
         URL url = new URL("http://localhost:4723/wd/hub");
         driver = new AndroidDriver(url, caps);
